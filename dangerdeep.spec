@@ -25,18 +25,18 @@ knowledge of physics allows. It's current state is ALPHA, but it is
 playable.
 
 %description -l pl
-Danger from the deep jest darmow± (otwartymi ¼ród³ami) symulacj± 
-niemieckiej ³odzi podwodnej z czasów II Wojny ¦wiatowej. 
-Gra jest zaplanowana jako taktyczno-symulacyjna i bedzie tak 
-realistyczna jak pozowli na to czas twórców i ich wiedza z fizyki.
-Aktualny stan jest okre¶lony jako ALPHA, ale jest grywalna.
+Danger from the deep jest darmow± (z dostêpnymi ¼ród³ami) symulacj±
+niemieckiej ³odzi podwodnej z czasów II Wojny ¦wiatowej. Gra jest
+zaplanowana jako taktyczno-symulacyjna i bêdzie tak realistyczna jak
+pozwoli na to czas twórców i ich wiedza z fizyki. Aktualny stan jest
+okre¶lony jako ALPHA, ale jest grywalna.
 
 %prep
 %setup -q -c
-
-%build
 sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
 sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
+
+%build
 scons
 
 %install
