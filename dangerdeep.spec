@@ -8,7 +8,7 @@ Group:		Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
 # Source0-md5:	b1dcc97066aa370a22e0ad768181590c
 URL:		http://dangerdeep.sourceforge.net/
-BuildRequires:	fftw3-common-devel
+BuildRequires:	fftw3-devel
 BuildRequires:	scons
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
