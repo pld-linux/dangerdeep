@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
 # Source0-md5:	b1dcc97066aa370a22e0ad768181590c
 URL:		http://dangerdeep.sourceforge.net/
 BuildRequires:	SDL_net-devel
+BuildRequires:	fftw3-common-devel
 BuildRequires:	scons
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -21,7 +22,12 @@ as tactical simulation and will be as realistic as our time and
 knowledge of physics allows. It's current state is ALPHA, but it is
 playable.
 
-#%%description -l pl
+%description -l pl
+Danger from the deep jest darmow± (otwartymi ¼ród³ami) symulacj± 
+niemieckiej ³odzi podwodnej z czasów II Wojny ¦wiatowej. 
+Gra jest zaplanowana jako taktyczno-symulacyjna i bedzie tak 
+realistyczna jak pozowli na to czas twórców i ich wiedza z fizyki.
+Aktualny stan jest okre¶lony jako ALPHA, ale jest grywalna.
 
 %prep
 %setup -q -c
@@ -33,9 +39,10 @@ scons
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_mandir}/man6}
 
 install build/linux/%{name} $RPM_BUILD_ROOT%{_bindir}
+install doc/man/%{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
 cp -r data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %clean
@@ -46,3 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc CREDITS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_mandir}/man6/%{name}.6*
