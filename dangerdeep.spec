@@ -24,11 +24,11 @@ playable.
 #%%description -l pl
 
 %prep
-%setup -q -c -n %{name}-%{version}
+%setup -q -c
 
 %build
 sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
-sed -i 's@%{_prefix}/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
+sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 scons
 
 %install
