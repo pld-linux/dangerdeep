@@ -21,8 +21,7 @@ as tactical simulation and will be as realistic as our time and
 knowledge of physics allows. It's current state is ALPHA, but it is
 playable.
 
-%description -l pl
-
+#%%description -l pl
 
 %prep
 %setup -q -c -n %{name}-%{version}
