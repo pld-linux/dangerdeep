@@ -1,12 +1,12 @@
 Summary:	Danger from the Deep - WW2 german submarine simulation
 Summary(pl):	Danger from the Deep - symulacja niemieckiej ³odzi podwodnej
 Name:		dangerdeep
-Version:	0.0.19
+Version:	0.1.0
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
-# Source0-md5:	b1dcc97066aa370a22e0ad768181590c
+# Source0-md5:	7e95d871b929a5e322d0a6bde37e7151
 URL:		http://dangerdeep.sourceforge.net/
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
