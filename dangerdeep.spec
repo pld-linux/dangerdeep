@@ -32,7 +32,7 @@ pozwoli na to czas twórców i ich wiedza z fizyki. Aktualny stan jest
 okre¶lony jako ALPHA, ale jest grywalna.
 
 %prep
-%setup -q -c
+%setup -q
 sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
 sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 
