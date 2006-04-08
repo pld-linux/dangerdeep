@@ -8,6 +8,7 @@ Group:		Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
 # Source0-md5:	7e95d871b929a5e322d0a6bde37e7151
 URL:		http://dangerdeep.sourceforge.net/
+BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	fftw3-devel
