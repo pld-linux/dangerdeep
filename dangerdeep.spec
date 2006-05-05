@@ -1,12 +1,12 @@
 Summary:	Danger from the Deep - WW2 german submarine simulation
 Summary(pl):	Danger from the Deep - symulacja niemieckiej ³odzi podwodnej
 Name:		dangerdeep
-Version:	0.1.0
-Release:	0.1
+Version:	0.1.1
+Release:	0.2
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
-# Source0-md5:	7e95d871b929a5e322d0a6bde37e7151
+# Source0-md5:	7de20b4594c0fee8d3c1a281f686f943
 URL:		http://dangerdeep.sourceforge.net/
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -32,6 +32,14 @@ zaplanowana jako taktyczno-symulacyjna i bêdzie tak realistyczna jak
 pozwoli na to czas twórców i ich wiedza z fizyki. Aktualny stan jest
 okre¶lony jako ALPHA, ale jest grywalna.
 
+%package utils
+Summary:	Danger from the Deep - Utils
+Summary(pl):	Danger from the Deep - narzêdzia
+Group:		Applications/Games
+Requires:	%{name}
+%description utils
+%description utils -l pl
+
 %prep
 %setup -q
 sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
@@ -48,12 +56,18 @@ install build/linux/%{name} $RPM_BUILD_ROOT%{_bindir}
 install doc/man/%{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
 cp -r data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 
+install build/linux/{crosssection,damagemodel,oceantest,portal,viewmodel} $RPM_BUILD_ROOT%{_bindir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS ChangeLog README TODO
-%attr(755,root,root) %{_bindir}/*
+%doc CREDITS ChangeLog README
+%attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_mandir}/man6/%{name}.6*
+
+%files utils
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
