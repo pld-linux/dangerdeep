@@ -37,8 +37,9 @@ Summary:	Danger from the Deep - Utils
 Summary(pl):	Danger from the Deep - narzêdzia
 Group:		Applications/Games
 Requires:	%{name}
+
 %description utils
-%description utils -l pl
+Danger from the Deep - Utils
 
 %prep
 %setup -q
