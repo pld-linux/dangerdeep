@@ -33,13 +33,16 @@ pozwoli na to czas twórców i ich wiedza z fizyki. Aktualny stan jest
 okre¶lony jako ALPHA, ale jest grywalna.
 
 %package utils
-Summary:	Danger from the Deep - Utils
+Summary:	Danger from the Deep - utils
 Summary(pl):	Danger from the Deep - narzêdzia
 Group:		Applications/Games
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description utils
-Danger from the Deep - Utils
+Danger from the Deep - utils.
+
+%description utils -l pl
+Danger from the Deep - narzêdzia.
 
 %prep
 %setup -q
