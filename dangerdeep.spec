@@ -50,6 +50,7 @@ sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
 sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 
 %build
+# use `scons usex86sse=-1' to build dangerdeep on Ac (tested on i686)
 scons
 
 %install
