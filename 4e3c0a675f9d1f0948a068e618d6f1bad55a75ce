@@ -1,0 +1,4 @@
+- release 0.2,
+- added subpackage -utils,
+- moved all utility to this package.
+[updated to 0.1.1]
