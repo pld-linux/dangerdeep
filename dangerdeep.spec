@@ -74,4 +74,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files utils
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/crosssection
+%attr(755,root,root) %{_bindir}/damagemodel
+%attr(755,root,root) %{_bindir}/oceantest
+%attr(755,root,root) %{_bindir}/portal
+%attr(755,root,root) %{_bindir}/viewmodel
