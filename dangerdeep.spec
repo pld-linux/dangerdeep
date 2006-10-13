@@ -1,12 +1,15 @@
 Summary:	Danger from the Deep - WW2 german submarine simulation
 Summary(pl):	Danger from the Deep - symulacja niemieckiej ³odzi podwodnej
 Name:		dangerdeep
-Version:	0.1.1
-Release:	0.2
+Version:	0.2.0
+Release:	0.1
 License:	GPL v2
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
-# Source0-md5:	7de20b4594c0fee8d3c1a281f686f943
+# Source0-md5:	3733507e99de5afc3c4172024cdfc61b
+Source1:	http://dl.sourceforge.net/sourceforge/dangerdeep/%{name}-data-%{version}.zip
+# Source1-md5:	931d035cdf07d29b57e4797218fe53ff
+Patch0:		%{name}-X11.patch
 URL:		http://dangerdeep.sourceforge.net/
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -14,6 +17,7 @@ BuildRequires:	SDL_net-devel
 BuildRequires:	fftw3-devel
 BuildRequires:	scons
 BuildRequires:	sed >= 4.0
+BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +39,7 @@ okre¶lony jako ALPHA, ale jest grywalna.
 %package utils
 Summary:	Danger from the Deep - utils
 Summary(pl):	Danger from the Deep - narzêdzia
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description utils
@@ -45,7 +49,8 @@ Danger from the Deep - utils.
 Danger from the Deep - narzêdzia.
 
 %prep
-%setup -q
+%setup -q -a 1
+%patch0 -p1
 sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
 sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 
