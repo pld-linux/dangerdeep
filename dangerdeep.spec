@@ -2,13 +2,14 @@ Summary:	Danger from the Deep - WW2 german submarine simulation
 Summary(pl):	Danger from the Deep - symulacja niemieckiej ³odzi podwodnej
 Name:		dangerdeep
 Version:	0.2.0
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
 # Source0-md5:	3733507e99de5afc3c4172024cdfc61b
 Source1:	http://dl.sourceforge.net/sourceforge/dangerdeep/%{name}-data-%{version}.zip
 # Source1-md5:	931d035cdf07d29b57e4797218fe53ff
+Source2:	%{name}.desktop
 Patch0:		%{name}-X11.patch
 URL:		http://dangerdeep.sourceforge.net/
 BuildRequires:	SDL_image-devel
@@ -56,14 +57,16 @@ sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 
 %build
 # use `scons usex86sse=-1' to build dangerdeep on Ac (tested on i686)
-scons
+scons usex86sse=-1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_mandir}/man6}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_desktopdir},%{_mandir}/man6,%{_pixmapsdir}}
 
 install build/linux/%{name} $RPM_BUILD_ROOT%{_bindir}
 install doc/man/%{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
+install logo.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 cp -r data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 install build/linux/{crosssection,damagemodel,oceantest,portal,viewmodel} $RPM_BUILD_ROOT%{_bindir}
@@ -76,7 +79,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc CREDITS ChangeLog README
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
+%{_desktopdir}/%{name}.desktop
 %{_mandir}/man6/%{name}.6*
+%{_pixmapsdir}/logo.xpm
 
 %files utils
 %defattr(644,root,root,755)
