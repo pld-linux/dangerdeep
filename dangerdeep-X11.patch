@@ -1,0 +1,12 @@
+--- dangerdeep-0.2.0/SConstruct~	2006-10-13 10:17:55.000000000 +0200
++++ dangerdeep-0.2.0/SConstruct	2006-10-13 10:18:35.000000000 +0200
+@@ -122,8 +122,7 @@
+ 	libpath = ['/usr/X11R6/lib']
+ 	gllibs = ['GL', 'GLU']
+ 	sdllibs = ['SDL', 'SDL_image']
+-	ccflags = '-Wall `sdl-config --cflags` `pkg-config --cflags x11`'
+-	env.Append(LINKFLAGS = '`pkg-config --libs-only-L x11`')
++	ccflags = '-Wall `sdl-config --cflags`'
+ 	if (debug >= 3):
+ 		ccflags += ' -g -pg -O3'	# profiling
+ 	elif (debug == 2):
