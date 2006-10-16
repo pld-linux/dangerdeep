@@ -66,7 +66,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_desktopdir},%{_mand
 install build/linux/%{name} $RPM_BUILD_ROOT%{_bindir}
 install doc/man/%{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
-install logo.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+install logo.xpm $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.xpm
 cp -r data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 install build/linux/{crosssection,damagemodel,oceantest,portal,viewmodel} $RPM_BUILD_ROOT%{_bindir}
@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_mandir}/man6/%{name}.6*
-%{_pixmapsdir}/logo.xpm
+%{_pixmapsdir}/%{name}.xpm
 
 %files utils
 %defattr(644,root,root,755)
