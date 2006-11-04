@@ -52,8 +52,8 @@ Danger from the Deep - narzêdzia.
 %prep
 %setup -q -a 1
 %patch0 -p1
-sed -i 's@-g -O2@%{rpmcflags}@' SConstruct
-sed -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
+%{__sed} -i 's@-g -O2@%{rpmcflags}@' SConstruct
+%{__sed} -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 
 %build
 # use `scons usex86sse=-1' to build dangerdeep on Ac (tested on i686)
