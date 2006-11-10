@@ -7,7 +7,7 @@ License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/dangerdeep/%{name}-%{version}.tar.gz
 # Source0-md5:	3733507e99de5afc3c4172024cdfc61b
-Source1:	http://dl.sourceforge.net/sourceforge/dangerdeep/%{name}-data-%{version}.zip
+Source1:	http://dl.sourceforge.net/dangerdeep/%{name}-data-%{version}.zip
 # Source1-md5:	931d035cdf07d29b57e4797218fe53ff
 Source2:	%{name}.desktop
 Patch0:		%{name}-X11.patch
