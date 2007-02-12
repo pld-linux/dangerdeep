@@ -1,5 +1,5 @@
 Summary:	Danger from the Deep - WW2 german submarine simulation
-Summary(pl):	Danger from the Deep - symulacja niemieckiej ³odzi podwodnej
+Summary(pl.UTF-8):   Danger from the Deep - symulacja niemieckiej Å‚odzi podwodnej
 Name:		dangerdeep
 Version:	0.2.0
 Release:	0.2
@@ -30,24 +30,24 @@ as tactical simulation and will be as realistic as our time and
 knowledge of physics allows. It's current state is ALPHA, but it is
 playable.
 
-%description -l pl
-Danger from the deep jest darmow± (z dostêpnymi ¼ród³ami) symulacj±
-niemieckiej ³odzi podwodnej z czasów II Wojny ¦wiatowej. Gra jest
-zaplanowana jako taktyczno-symulacyjna i bêdzie tak realistyczna jak
-pozwoli na to czas twórców i ich wiedza z fizyki. Aktualny stan jest
-okre¶lony jako ALPHA, ale jest grywalna.
+%description -l pl.UTF-8
+Danger from the deep jest darmowÄ… (z dostÄ™pnymi ÅºrÃ³dÅ‚ami) symulacjÄ…
+niemieckiej Å‚odzi podwodnej z czasÃ³w II Wojny Åšwiatowej. Gra jest
+zaplanowana jako taktyczno-symulacyjna i bÄ™dzie tak realistyczna jak
+pozwoli na to czas twÃ³rcÃ³w i ich wiedza z fizyki. Aktualny stan jest
+okreÅ›lony jako ALPHA, ale jest grywalna.
 
 %package utils
 Summary:	Danger from the Deep - utils
-Summary(pl):	Danger from the Deep - narzêdzia
+Summary(pl.UTF-8):   Danger from the Deep - narzÄ™dzia
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description utils
 Danger from the Deep - utils.
 
-%description utils -l pl
-Danger from the Deep - narzêdzia.
+%description utils -l pl.UTF-8
+Danger from the Deep - narzÄ™dzia.
 
 %prep
 %setup -q -a 1
