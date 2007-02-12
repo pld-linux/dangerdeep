@@ -1,5 +1,5 @@
 Summary:	Danger from the Deep - WW2 german submarine simulation
-Summary(pl.UTF-8):   Danger from the Deep - symulacja niemieckiej łodzi podwodnej
+Summary(pl.UTF-8):	Danger from the Deep - symulacja niemieckiej łodzi podwodnej
 Name:		dangerdeep
 Version:	0.2.0
 Release:	0.2
@@ -39,7 +39,7 @@ określony jako ALPHA, ale jest grywalna.
 
 %package utils
 Summary:	Danger from the Deep - utils
-Summary(pl.UTF-8):   Danger from the Deep - narzędzia
+Summary(pl.UTF-8):	Danger from the Deep - narzędzia
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
