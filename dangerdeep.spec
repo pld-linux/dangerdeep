@@ -12,7 +12,7 @@ Source1:	http://dl.sourceforge.net/dangerdeep/%{name}-data-%{version}.zip
 Source2:	%{name}.desktop
 Patch0:		%{name}-X11.patch
 URL:		http://dangerdeep.sourceforge.net/
-BuildRequires:	Mesa-libGLU-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
