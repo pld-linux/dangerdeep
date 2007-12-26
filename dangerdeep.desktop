@@ -2,10 +2,9 @@
 Name=Danger from the Deep
 Comment=WW2 german submarine simulation
 Comment[pl]=Symulacja niemieckiej łodzi podwodnej
-Icon=dangerdeep.xpm
+Icon=dangerdeep
 Exec=dangerdeep
 Terminal=false
 Type=Application
 Categories=Game;Simulation;
-Encoding=UTF-8
 # vi: encoding=utf-8
