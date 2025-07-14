@@ -52,7 +52,7 @@ Danger from the Deep - narzędzia.
 
 %prep
 %setup -q -a 1
-%patch0 -p1
+%patch -P0 -p1
 %{__sed} -i 's@-g -O2@%{rpmcflags}@' SConstruct
 %{__sed} -i 's@/usr/local/share/dangerdeep@%{_datadir}/dangerdeep@' SConstruct
 
